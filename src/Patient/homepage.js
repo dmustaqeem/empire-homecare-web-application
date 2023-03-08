@@ -32,7 +32,7 @@ const homepage =()=>{
                         <h6 style={{color:"grey"}}>COMPANY</h6>
                         <h5 style={{color:"white"}}>About Us</h5>
                         <h5 style={{color:"white"}}>Contact Us</h5>
-                        <h5 style={{color:"white"}}>Careers</h5>
+                        <h5 style={{color:"white"}}>Careegggrs</h5>
                         <h5 style={{color:"white"}}>Press</h5>
                     </div>
                     <div className='socials'>
