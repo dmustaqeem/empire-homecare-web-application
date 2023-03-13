@@ -1,3 +1,4 @@
 import CareGiverHomePage from './Homepage.js'
 import VisitDetails from './VisitDetails.js'
-export{CareGiverHomePage,VisitDetails}
+import PatientDetails from './PatientDetails.js'
+export{CareGiverHomePage,VisitDetails,PatientDetails}
