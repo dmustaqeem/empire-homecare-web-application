@@ -10,6 +10,9 @@ import Avatar from "@mui/material/Avatar";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
 import { List, ListItem, ListItemText } from "@material-ui/core";
+import { display } from "@mui/system";
+import PhoneIcon from '@mui/icons-material/Phone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 //
 const jsonData = [
   {
@@ -59,6 +62,35 @@ const PlanOfCareList = [
       id: 3,
       name: "House Clean",
     },
+    {
+      id: 4,
+      name: "House Clean",
+    },
+    {
+      id: 5,
+      name: "House Clean",
+    },
+    {
+      id: 6,
+      name: "House Clean",
+    },
+    {
+      id: 7,
+      name: "House Clean",
+    },
+    {
+      id: 8,
+      name: "House Clean",
+    },
+    {
+      id: 9,
+      name: "House Clean",
+    },
+    {
+      id: 10,
+      name: "House Clean",
+    },
+
   ];
   const OtherTaskList = [
     {
@@ -68,6 +100,18 @@ const PlanOfCareList = [
     {
       id: 2,
       name: "Hair Care",
+    },
+    {
+      id: 3,
+      name: "Park Visit",
+    },
+    {
+      id: 3,
+      name: "Park Visit",
+    },
+    {
+      id: 3,
+      name: "Park Visit",
     },
     {
       id: 3,
@@ -149,13 +193,30 @@ const VisitDetails = () => {
       <div className="ListHolder">
 
         <div className="PlanofCareList">
-        <List style={{ maxHeight: "100%", overflow: "auto" }}>
-        {jsonData.map((item) => (
+          <p style ={{color:"grey",fontWeight:"bold",fontSize:"20px",marginLeft:"30%"}}>Plan Of Care</p>
+        <List style={{maxHeight: "75%", overflow: "auto" }}>
+        {PlanOfCareList.map((item) => (
           <ListItem
             className="ListItem"
           >
             <ListItemText
-              primary={<p style={{ fontSize: "25px" }}>{item.name}</p>}
+              primary={<p style={{ fontSize: "20px",fontWeight:"bold",color:"white"}}> {item.id}- {item.name}</p>}
+              className="ListText"
+            />
+            
+          </ListItem>
+        ))}
+      </List>
+        </div>
+        <div className="OtherList">
+          <p style ={{color:"grey",fontSize:"20px",fontWeight:"bold",marginLeft:"30%"}}>Other Task</p>
+        <List style={{ maxHeight: "75%", overflow: "auto" }}>
+        {OtherTaskList.map((item) => (
+          <ListItem
+            className="ListItem"
+          >
+            <ListItemText
+              primary={<p style={{ fontSize: "20px",fontWeight:"bold",color:"white" }}> {item.id}- {item.name}</p>}
               className="ListText"
             />
             
@@ -171,22 +232,58 @@ const VisitDetails = () => {
   const DirectionView = () => {
     return (
       <div>
-        <h1>Visit Details</h1>
-        <p>Name: {selectedItem.name}</p>
-        <p>Addresdss: {selectedItem.address}</p>
-        <p>Expected Clock On: {selectedItem.expectedClockOn}</p>
-        <p>Expected Clock Out: {selectedItem.expectedClockOut}</p>
+        <Card className="DirectionCard">
+         <div style={{textAlign:"center"}}>
+         <p style={{fontSize:"15px",color:"grey",fontWeight:"bold"}}>Primary Address</p>
+         </div>
+         <div>
+         <p style={{fontSize:"25px",fontWeight:"bold",color:"white"}}>{" 262A Upper Tooting Road South West London, SW15DR"}</p>
+         </div>
+        </Card>
+        <div className="mapholder">
+            <h2>**Map Here**</h2>
+         </div>
       </div>
     );
   };
   const PatientView = () => {
     return (
-      <div>
-        <h1>Visit Details</h1>
-        <p>Namedd: {selectedItem.name}</p>
-        <p>Address: {selectedItem.address}</p>
-        <p>Expected Clock On: {selectedItem.expectedClockOn}</p>
-        <p>Expected Clock Out: {selectedItem.expectedClockOut}</p>
+      <div className="PatientViewHolder" >
+
+        <Card className="contactCard">
+          <p style={{textAlign:"center",fontSize:"15px",color:"grey",fontWeight:"bold"}}>Contact Information</p>
+
+          <div className="phoneNumber">
+          <PhoneIcon style={{color:"whitesmoke",fontSize:"30px",marginTop:"15%",marginRight:"5%"}} />
+          <p style={{fontWeight:"bold",color:"whitesmoke",fontSize:"25px"}}>07024587956</p>
+          </div>
+          <div className="phoneNumber">
+          <PhoneIcon style={{color:"whitesmoke",fontSize:"30px",marginTop:"15%",marginRight:"5%"}} />
+          <p style={{fontWeight:"bold",color:"whitesmoke",fontSize:"25px"}}>07024587956</p>
+          </div>
+          <div className="phoneNumber">
+          <PhoneIcon style={{fontSize:"30px",color:"whitesmoke",marginTop:"15%",marginRight:"5%"}} />
+          <p style={{fontWeight:"bold",color:"whitesmoke",fontSize:"25px"}}>07024587956</p>
+          </div>
+          <div className="phoneNumber">
+          <LocationOnIcon style={{color:"whitesmoke",fontSize:"30px",marginTop:"6%"}} />
+          <p style={{fontWeight:"bold",color:"whitesmoke",fontSize:"25px"}}>262 A Upper Tooting Road, SW10DS</p>
+          </div>
+        </Card>
+
+        <Card className="EmergencyCard">
+          <p style={{textAlign:"center",fontSize:"15px",color:"grey",fontWeight:"bold"}}>Emergency Contact</p>
+
+          <div className="phoneNumber">
+          <PhoneIcon style={{color:"whitesmoke",fontSize:"30px",marginTop:"15%",marginRight:"5%"}} />
+          <p style={{fontWeight:"bold",color:"whitesmoke",fontSize:"25px"}}>07024587956</p>
+          </div>
+          <div className="phoneNumber">
+          <PhoneIcon style={{color:"whitesmoke",fontSize:"30px",marginTop:"15%",marginRight:"5%"}} />
+          <p style={{fontWeight:"bold",color:"whitesmoke",fontSize:"25px"}}>07024587956</p>
+          </div>
+         
+        </Card>
       </div>
     );
   };
@@ -318,6 +415,96 @@ width: 100%;
     display:flex;
     flex-direction:row;
 }
+//patient view start
+.PatientViewHolder{
+  display:flex;
+  flex-direction:row;
+}
+.contactCard{
+  background-color:#012E40;
+  border-radius:15px;
+  padding:2%;
+  width:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+.phoneNumber{
+  display:flex;
+  flex-direction:row;
+}
+.EmergencyCard{
+  
+  margin-left:2%;
+  background-color:#012E40;
+  border-radius:15px;
+  padding:2%;
+  width:50%;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+
+}
+
+// patient view end
+
+
+.PlanofCareList{
+  height:325px;
+  width:400px;
+  margin-top:3.5%;
+  margin-left:5%;
+  border-radius:15px;
+  padding:1%;
+  background-color:#002333;
+}
+.OtherList{
+  height:325px;
+  width:400px;
+  margin-top:3.5%;
+  margin-left:12.5%;
+  border-radius:15px;
+  padding:1%;
+  background-color:#002333;
+}
+.ListItem{
+  margin-top:1%;
+  color:black;
+  margin-left:20%;
+  width:250px;
+}
+.ListHolder{
+  display:flex;
+  flex-direction:row;
+}
+
+//direction start
+.mapholder{
+  
+  height: 450px;
+  width: 800px;
+  background-color: white;
+  margin-top: 1%;
+  margin-left: 12.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.DirectionCard{
+  display:flex;
+  flex-direction:column;
+  background-color:#012E40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// direction end
+
+
+
+
 //Clock in/Out View
 .ClockCardHolder{
     display:flex;
