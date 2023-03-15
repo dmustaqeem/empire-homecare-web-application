@@ -340,13 +340,14 @@ function Homepage() {
           <p
             style={{
               marginLeft: "45%",
-              fontSize: "13px",
+              fontSize: "20px",
               color: "white",
               fontWeight: "bold",
             }}
           >
             Files
           </p>
+          <hr style={{width:"50%",fontSize:"10px",opacity:"0.2"}}/>
           <div className="buttonHolder">
             <Button
               className="navigationButton"
@@ -405,7 +406,7 @@ function Homepage() {
 
       <div className="footer">
         <div className="LogoHolder">
-          <img src="./empire-130x130(2).png"></img>
+          <img src="/LogoBK.png"></img>
         </div>
         <div className="company">
           <h6 style={{ color: "grey" }}>COMPANY</h6>
@@ -650,10 +651,10 @@ width:93%;
 background-color:white;
 }
 .headerImage{
-width:7%;
-height:1%;
-border-radius:15px;
-}
+  width:7%;
+  height:1%;
+  border-radius:15px;
+  }
 .headerImage:hover{
 animation: wave 1s infinite;
 
